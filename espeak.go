@@ -11,6 +11,9 @@ package espeak
 #cgo LDFLAGS: -lportaudio -lespeak
 #include <stdio.h>
 #include <string.h>
+#if defined(__MACH__)
+#include <stdlib.h>
+#else 
 #include <malloc.h>
 #include <speak_lib.h>
 
